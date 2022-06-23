@@ -1,0 +1,32 @@
+@isTest
+public class FranquiaDoChurrasTest {
+	
+    @isTest
+    public static void testFranquia(){
+
+		 FranquiaDoChurras Test = new FranquiaDoChurras();
+		 FranquiaDoChurras Test2 = new FranquiaDoChurras();
+
+        integer qtdeTest = test.getQtdeFranquias();
+        integer acumuladoTotal = test.getAcumuladoTotal();
+        
+        system.assertEquals(0, qtdeTest, 'os valores não batem');
+        system.assertEquals(0, acumuladoTotal, 'os valores não batem');
+        
+        
+        test.criarFranquia('Santos', 100);
+        test2.criarFranquia('São Paulo', 100);
+        
+        qtdeTest = test.getQtdeFranquias();
+        acumuladoTotal = test.getAcumuladoTotal();
+        
+        system.assertEquals(2, qtdeTest, 'os valores não batem');
+        system.assertEquals(200, acumuladoTotal, 'os valores não batem');
+        
+        String cidadeTest = test.getFranquia();
+        	system.assertEquals('Santos', cidadeTest, 'os valores não batem');
+        
+        String cidadeTes2 = test2.getFranquia();
+        	system.assertEquals('São Paulo', cidadeTes2, 'os valores não batem');
+    }
+}
